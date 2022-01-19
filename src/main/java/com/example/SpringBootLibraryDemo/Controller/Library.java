@@ -2,6 +2,7 @@ package com.example.SpringBootLibraryDemo.Controller;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
@@ -9,6 +10,7 @@ import javax.persistence.Table;
 public class Library {
     @Column(name="book_name")
     private String book_name;
+    @Id
     @Column(name="id")
     private String id;
     @Column(name="isbn")
