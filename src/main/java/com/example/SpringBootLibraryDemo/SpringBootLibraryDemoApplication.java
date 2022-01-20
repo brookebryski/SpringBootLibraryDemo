@@ -28,7 +28,7 @@ public class SpringBootLibraryDemoApplication implements CommandLineRunner {
 		en.setAisle(123);
 		en.setAuthor("Rahul");
 		en.setBook_name("Devops");
-		en.getIsbn("lkhs");
+		en.setIsbn("lkhs");
 		en.setId("lkhs123");
 		// repository.save(en);
 		List<Library> allrecords =  repository.findAll();
