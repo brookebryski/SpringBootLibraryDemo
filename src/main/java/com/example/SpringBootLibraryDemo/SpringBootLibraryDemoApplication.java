@@ -81,3 +81,15 @@ public class SpringBootLibraryDemoApplication {
 //   "author": "Rahul ShettyTrainer",
 //   "bookName":"Python"
 // }
+
+// Get Book by Author:
+// Resource: getBooks/author?authorname=rahul
+// HTTP Method: GET
+// Response:
+// {
+//	  "id":"mnbc234",
+//    "isbn": "mnbc",
+//    "aisle": 234,
+//    "author": "Rahul ShettyTrainer",
+//    "bookName":"Python"
+// }
