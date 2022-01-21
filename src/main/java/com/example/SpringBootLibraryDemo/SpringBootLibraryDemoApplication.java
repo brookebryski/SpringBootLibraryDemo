@@ -69,3 +69,15 @@ public class SpringBootLibraryDemoApplication {
 //     "id": ""
 // }
 // Status Code - 202
+
+// Get Book by ID:
+// Resource: getBooks/{ID}
+// HTTP Method: GET
+// Response:
+// {
+//   "id":"mnbc234",
+//   "isbn": "mnbc",
+//   "aisle":234,
+//   "author": "Rahul ShettyTrainer",
+//   "bookName":"Python"
+// }

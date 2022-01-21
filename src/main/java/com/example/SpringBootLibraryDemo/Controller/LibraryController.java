@@ -6,9 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 
 @RestController
@@ -45,6 +44,19 @@ public class LibraryController {
             return new ResponseEntity<AddResponse>(ad, HttpStatus.ACCEPTED);
         }
            // write the code to tell book already exists
+        }
+
+        @GetMapping("/getBooks/{id}")
+        public Library getBookById(@PathVariable(value="id")String id)
+        {
+            try {
+                Library lib = repository.findById(id).get();
+                return lib;
+            }
+            catch(Exception e)
+            {
+                throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+            }
         }
     }
 
