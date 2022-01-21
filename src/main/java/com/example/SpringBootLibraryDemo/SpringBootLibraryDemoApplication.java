@@ -65,6 +65,7 @@ public class SpringBootLibraryDemoApplication {
 // If book is already present in table:
 // Response:
 // {
-//	  "msg": "Book already exists"
+//	  "msg": "Book already exists",
+//     "id": ""
 // }
 // Status Code - 202
