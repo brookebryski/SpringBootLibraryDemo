@@ -104,3 +104,14 @@ public class SpringBootLibraryDemoApplication {
 //     "author": "shetty",
 //     "book_name": "selenium"
 // }
+
+// Delete Book
+// HTTP Request - POST
+// End Point - http://localhost:8080
+// Resource - deleteBook
+// Status Code - 201
+// Body/Payload
+// {
+//   "id":"dsfrw"
+// }
+// Response: "Book is deleted"
