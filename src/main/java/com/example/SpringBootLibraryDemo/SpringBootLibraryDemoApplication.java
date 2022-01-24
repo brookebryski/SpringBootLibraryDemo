@@ -93,3 +93,14 @@ public class SpringBootLibraryDemoApplication {
 //    "author": "Rahul ShettyTrainer",
 //    "bookName":"Python"
 // }
+
+// Update Book
+// HTTP Request - POST (or PUT)
+// End Point - /updateBook/{id}
+// Status Code - 200
+// Body/Payload:
+// {
+//	   "aisle":201622,
+//     "author": "shetty",
+//     "book_name": "selenium"
+// }
