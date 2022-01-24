@@ -62,7 +62,7 @@ public class LibraryController {
         @GetMapping("getBooks/author")
         public void getBookByAuthorName(@RequestParam(value="authorname")String authorname)
         {
-            repository.
+            repository.findAllByAuthor(authorname);
         }
     }
 
