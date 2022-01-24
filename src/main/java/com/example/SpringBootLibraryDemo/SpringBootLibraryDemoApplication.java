@@ -115,3 +115,15 @@ public class SpringBootLibraryDemoApplication {
 //   "id":"dsfrw"
 // }
 // Response: "Book is deleted"
+
+// Get All Books:
+// Resource: /getBooks
+// Http Method: GET
+// Response:
+// {
+//   "id":"mnbc234",
+//   "isbn": "mnbc",
+//   "aisle":234,
+//   "author": "Rahul ShettyTrainer",
+//   "bookName":"Python"
+// }
