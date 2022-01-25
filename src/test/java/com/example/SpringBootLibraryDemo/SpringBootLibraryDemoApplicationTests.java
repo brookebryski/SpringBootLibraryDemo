@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -47,6 +48,7 @@ class SpringBootLibraryDemoApplicationTests {
 
 		ResponseEntity response =con.addBookImplementation(buildLibrary());
 		System.out.println(response.getStatusCode());
+		assertEquals(response.getStatusCode(), HttpStatus.CREATED);
 	}
 
 	public Library buildLibrary()
