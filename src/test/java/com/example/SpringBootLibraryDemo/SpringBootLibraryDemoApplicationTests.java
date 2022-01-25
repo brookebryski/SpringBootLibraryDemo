@@ -1,5 +1,6 @@
 package com.example.SpringBootLibraryDemo;
 
+import com.example.SpringBootLibraryDemo.Controller.AddResponse;
 import com.example.SpringBootLibraryDemo.Controller.Library;
 import com.example.SpringBootLibraryDemo.Controller.LibraryController;
 import com.example.SpringBootLibraryDemo.Repository.LibraryRepository;
@@ -44,11 +45,15 @@ class SpringBootLibraryDemoApplicationTests {
 		// mock
 		Library lib = buildLibrary();
 		when(libraryService.buildId(lib.getIsbn(), lib.getAisle())).thenReturn(lib.getId());
-		when(libraryService.checkBookAlreadyExists(lib.getId())).thenReturn(true);
+		when(libraryService.checkBookAlreadyExists(lib.getId())).thenReturn(false);
 
 		ResponseEntity response =con.addBookImplementation(buildLibrary());
 		System.out.println(response.getStatusCode());
-		assertEquals(response.getStatusCode(), HttpStatus.ACCEPTED);
+		assertEquals(response.getStatusCode(), HttpStatus.CREATED);
+		AddResponse ad= (AddResponse) response.getBody();
+		ad.getId();
+		assertEquals(lib.getId(), ad.getId());
+		assertEquals("Success Book is Added",ad.getMsg());
 	}
 
 	public Library buildLibrary()
