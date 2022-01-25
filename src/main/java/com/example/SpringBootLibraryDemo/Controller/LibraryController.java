@@ -2,6 +2,8 @@ package com.example.SpringBootLibraryDemo.Controller;
 
 import com.example.SpringBootLibraryDemo.Repository.LibraryRepository;
 import com.example.SpringBootLibraryDemo.Service.LibraryService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -21,6 +23,8 @@ public class LibraryController {
     @Autowired
     LibraryService libraryService;
 
+    private static final Logger Logger= LoggerFactory.getLogger(LibraryController.class);
+
     @PostMapping("/addBook")
     public ResponseEntity<AddResponse> addBookImplementation(@RequestBody Library library)
     {
@@ -28,7 +32,7 @@ public class LibraryController {
         AddResponse ad = new AddResponse();
         if(!libraryService.checkBookAlreadyExists(id))
         {
-
+            Logger.info("Book does not exist, creating book");
             library.setId(id);
             repository.save(library);
             HttpHeaders headers = new HttpHeaders();
@@ -41,6 +45,7 @@ public class LibraryController {
         // add book details into database
         else
         {
+            Logger.info("Book exists, skipping creation");
             ad.setMsg("Book already exists.");
             ad.setId(id);
             return new ResponseEntity<AddResponse>(ad, HttpStatus.ACCEPTED);
@@ -84,6 +89,7 @@ public class LibraryController {
         {
            Library libdelete =repository.findById(library.getId()).get();
            repository.delete(libdelete);
+           Logger.info("Book is deleted");
            return new ResponseEntity<>("Book is deleted", HttpStatus.CREATED);
         }
     }

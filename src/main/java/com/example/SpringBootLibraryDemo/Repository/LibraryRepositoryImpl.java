@@ -16,7 +16,7 @@ public class LibraryRepositoryImpl implements LibraryRepositoryCustom {
         List<Library> bookswithAuthor = new ArrayList<Library>();
         List<Library> books = repository.findAll();
         for (Library item : books)
-            if (item.getAuthor().equalsIgnoreCase("authorNAme")) {
+            if (item.getAuthor().equalsIgnoreCase("authorName")) {
                 bookswithAuthor.add(item);
             }
             return bookswithAuthor;
