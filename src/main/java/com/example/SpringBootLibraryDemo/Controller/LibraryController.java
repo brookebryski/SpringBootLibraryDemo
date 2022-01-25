@@ -28,13 +28,13 @@ public class LibraryController {
     @PostMapping("/addBook")
     public ResponseEntity<AddResponse> addBookImplementation(@RequestBody Library library)
     {
-        String id = libraryService.buildId(library.getIsbn(), library.getAisle());
+        String id = libraryService.buildId(library.getIsbn(), library.getAisle()); //dependency mock
         AddResponse ad = new AddResponse();
-        if(!libraryService.checkBookAlreadyExists(id))
+        if(!libraryService.checkBookAlreadyExists(id)) //mock
         {
             Logger.info("Book does not exist, creating book");
             library.setId(id);
-            repository.save(library);
+            repository.save(library);   //mock
             HttpHeaders headers = new HttpHeaders();
             headers.add("unique", id);
             ad.setMsg("Success book is added");
