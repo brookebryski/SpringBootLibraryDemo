@@ -44,11 +44,11 @@ class SpringBootLibraryDemoApplicationTests {
 		// mock
 		Library lib = buildLibrary();
 		when(libraryService.buildId(lib.getIsbn(), lib.getAisle())).thenReturn(lib.getId());
-		when(libraryService.checkBookAlreadyExists(lib.getId())).thenReturn(false);
+		when(libraryService.checkBookAlreadyExists(lib.getId())).thenReturn(true);
 
 		ResponseEntity response =con.addBookImplementation(buildLibrary());
 		System.out.println(response.getStatusCode());
-		assertEquals(response.getStatusCode(), HttpStatus.CREATED);
+		assertEquals(response.getStatusCode(), HttpStatus.ACCEPTED);
 	}
 
 	public Library buildLibrary()
