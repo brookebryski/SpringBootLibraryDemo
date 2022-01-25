@@ -92,5 +92,12 @@ public class LibraryController {
            Logger.info("Book is deleted");
            return new ResponseEntity<>("Book is deleted", HttpStatus.CREATED);
         }
+
+        @GetMapping("/getBooks")
+        public List<Library> getBooks()
+        {
+            return repository.findAll();
+        }
+
     }
 
