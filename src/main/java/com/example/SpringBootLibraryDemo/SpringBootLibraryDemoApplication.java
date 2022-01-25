@@ -127,3 +127,8 @@ public class SpringBootLibraryDemoApplication {
 //   "author": "Rahul ShettyTrainer",
 //   "bookName":"Python"
 // }
+
+// Security:
+// Add security dependency to Pom
+// Run server
+// Copy and paste password from terminal into Postman authorization basic auth
