@@ -1,3 +1,10 @@
+// Integration Testing:
+// Can be done by calling real endpoints using RestTemplate Class
+// If our goal is to test just integration layer with Http Requests,
+// then database access layer can be mocked using H2 Database.
+// Start the server with H2 Database profile configuration and run
+// integration tests to see end points connectivity
+
 package com.example.SpringBootLibraryDemo;
 
 import com.example.SpringBootLibraryDemo.Controller.Library;
